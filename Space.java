@@ -48,7 +48,7 @@ public class Space extends World
         }
     }
     
-     private void paintStars(int count) 
+    private void paintStars(int count) 
     {
         GreenfootImage background = getBackground();
         for(int i = 0; i < count; i++) 
