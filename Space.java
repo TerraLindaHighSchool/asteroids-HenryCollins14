@@ -62,12 +62,21 @@ public class Space extends World
         }
     }
     
+    
+    public void updateScore(int addToScore)
+    {
+        scoreCounter.add(addToScore);
+    }
+    
     /**
      * This method is called when the game is over to display the final score.
      */
     public void gameOver() 
     {
-        // TODO: show the score board here. Currently missing.
+        int x = getWidth() / 2;
+        int y = getHeight() / 2;
+        int currentScore = scoreCounter.getValue();
+        addObject(new ScoreBoard(currentScore),x ,y);
     }
 
 }
