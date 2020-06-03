@@ -48,17 +48,17 @@ public class Rocket extends SmoothMover
             fire();
         }
         
-        if (Greenfoot.isKeyDown("left")) 
+        if (Greenfoot.isKeyDown("a")) 
         {
             turn(-5);
         }
         
-        if (Greenfoot.isKeyDown("right")) 
+        if (Greenfoot.isKeyDown("d")) 
         {
             turn(5);
         }
         
-        ignite(Greenfoot.isKeyDown("up"));
+        ignite(Greenfoot.isKeyDown("w"));
     }
     
     /**

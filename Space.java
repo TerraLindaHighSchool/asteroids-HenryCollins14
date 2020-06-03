@@ -20,20 +20,17 @@ public class Space extends World
         GreenfootImage background = getBackground();
         background.setColor(Color.BLACK);
         background.fill();
-        
-        Rocket rocket = new Rocket();
-        addObject(rocket, getWidth()/2 + 100, getHeight()/2);
-        
-        addAsteroids(startAsteroids);
+
         paintStars(300);
-        
+
         scoreCounter = new Counter("Score: ");
         addObject(scoreCounter, 60, 480);
 
         Explosion.initializeImages();
         ProtonWave.initializeImages();
+        prepare();
     }
-    
+
     /**
      * Add a given number of asteroids to our world. Asteroids are only added into
      * the left half of the world.
@@ -47,7 +44,7 @@ public class Space extends World
             addObject(new Asteroid(), x, y);
         }
     }
-    
+
     private void paintStars(int count) 
     {
         GreenfootImage background = getBackground();
@@ -61,13 +58,12 @@ public class Space extends World
             background.fillOval(x, y, size, size);
         }
     }
-    
-    
+
     public void updateScore(int addToScore)
     {
         scoreCounter.add(addToScore);
     }
-    
+
     /**
      * This method is called when the game is over to display the final score.
      */
@@ -79,4 +75,19 @@ public class Space extends World
         addObject(new ScoreBoard(currentScore),x ,y);
     }
 
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Rocket rocket = new Rocket();
+        addObject(rocket,29,272);
+        Asteroid asteroid = new Asteroid();
+        addObject(asteroid,535,104);
+        Asteroid asteroid2 = new Asteroid();
+        addObject(asteroid2,531,261);
+        Asteroid asteroid3 = new Asteroid();
+        addObject(asteroid3,546,444);
+    }
 }

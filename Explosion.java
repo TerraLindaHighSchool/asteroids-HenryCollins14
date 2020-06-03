@@ -31,7 +31,6 @@ public class Explosion extends Actor
     {
         initializeImages();
         setImage(images[0]);
-        Greenfoot.playSound("MetalExplosion.wav");
     }    
     
     /** 
